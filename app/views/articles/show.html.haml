@@ -1,0 +1,24 @@
+.container
+  .show#show-article{data: {article_id: @article.id}}
+    .show_date
+      %p= @article.display_created_at
+    - if user_signed_in? && current_user.has_written?(@article)
+      .article_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_article_path(@article)
+            = link_to '削除する', article_path(@article), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+    %p.show_title タイトル
+    = @article.title
+    %p.show_content 内容
+    = @article.content
+    - if @article.eyecatch.attached?
+      .show_image
+        = image_tag @article.eyecatch
+    .show_detail
+      .show_detail_content
+        .show_detail_content_name
+          = image_tag 'default-icon.png'
+        - if user_signed_in?
+          = image_tag 'heart.svg'

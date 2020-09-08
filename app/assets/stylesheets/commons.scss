@@ -1,0 +1,94 @@
+@import './variables';
+
+.dropbtn {
+  border: none;
+}
+
+.dropbtn-comments {
+  border: none;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-weight: normal;
+  display: none;
+  left: 30px;
+  top: 0;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &.mini {
+    min-width: 100px;
+  }
+}
+
+.dropdown-content-comments {
+  margin-left: 5px;
+  font-weight: normal;
+  display: none;
+  position: absolute;
+  left: 117px;
+  top: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &.mini {
+    min-width: 100px;
+  }
+}
+
+.dropdown-content a {
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  color: $text-base-color;
+}
+
+.show_comments_open {
+  margin: 0;
+  text-align: center;
+  display: block;
+  color: $text-base-color;
+}
+
+.dropdown-content a:hover {
+  opacity: 0.8;
+}
+
+.dropdown-content p:hover {
+  opacity:0.8;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content-comments {
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  .dropdown-content-comments {
+    position: absolute;
+    left: -105px;
+  }
+
+}
+
+@media screen and (min-width: 2560px) {
+  .dropdown-content-comments {
+    left: 230px;
+  }
+}

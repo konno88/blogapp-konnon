@@ -1,0 +1,19 @@
+.container
+  %ul.message
+    - @article.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: article, local: true) do |f|
+    .form
+      %div
+        = f.label :eyecatch, 'アイキャッチ', class: 'form_eyecatch'
+      %div
+        = f.file_field :eyecatch, class: 'form_eyecatch_field'
+      %div
+        = f.label :title, 'タイトル', class: 'form_title'
+      %div
+        = f.text_field :title, class: 'form_title_text'
+      %div
+        = f.label :content, '内容', class: 'form_content'
+      %div
+        = f.rich_text_area :content, class: 'form_content_text'
+      = f.submit '保存', class: 'btn-primary'

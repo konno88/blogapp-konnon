@@ -5,6 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :articles, dependent: :destroy
+
+  
+  def has_written?(article)
+    articles.exists?(id: article.id)
+  end
   
   protected
   def self.from_omniauth(access_token)
