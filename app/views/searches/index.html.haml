@@ -1,0 +1,17 @@
+.container
+  .searching
+    = form_with(model: @profile, url: searches_path, method: 'get', local: true) do |f|
+      = f.select :musical_instrument, Profile.musical_instruments.keys, {prompt: '選択してください'}, {class: 'form_musical-instrument_text'}
+      = f.submit '検索する', class: 'btn-search'
+  .followings
+    .followings_index
+      - @users.each do |user|
+        = link_to account_path(id: user.user_id) do
+          .followings_index_user
+            .followings_index_user_image
+              = image_tag user.user.avatar_image
+            .followings_index_user_text
+              .followings_index_user_name
+                = user.user.display_name
+              .followings_index_user_introduction
+                = user.user.profile&.introduction
