@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   resources :user_followers, only: [:show, :index]
 
   resource :timeline, only: [:show]
+
+  resources :searches, only: [:index]
 end

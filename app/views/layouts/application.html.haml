@@ -37,7 +37,7 @@
                   %li#nav-content_list_item= link_to 'いいね一覧', favorites_path
                   %li#nav-content_list_item= link_to 'フォローリスト', followings_path
                   %li#nav-content_list_item= link_to 'フォロワーリスト', followers_path
-                  %li#nav-content_list_item= link_to 'ユーザー検索', '#'
+                  %li#nav-content_list_item= link_to 'ユーザー検索', searches_path
         %div
           %ul.header_list
             %li.header_list_item= link_to 'HOMEに戻る', root_path
@@ -48,7 +48,7 @@
             %li.header_list_item= link_to 'いいね一覧', favorites_path
             %li.header_list_item= link_to 'フォローリスト', followings_path
             %li.header_list_item= link_to 'フォロワーリスト', followers_path
-            %li.header_list_item= link_to 'ユーザー検索', '#'
+            %li.header_list_item= link_to 'ユーザー検索', searches_path
     .container
       - if flash.present?
         .flash
