@@ -10,7 +10,7 @@
         = image_tag 'heart.svg'
         %span= article.like_count
       .card_detail
-        = image_tag 'default-icon.png'
+        = image_tag article.user.avatar_image
         %div
-          %p ごう
+          %p= article.author_name
           %p= article.display_created_at

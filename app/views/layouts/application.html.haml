@@ -24,7 +24,10 @@
               %label#nav-close.nav-unshown{:for => "nav-input"}
               #nav-content
                 #nav-content_head
-                  = image_tag 'default-icon.png'
+                  - if user_signed_in? && current_user&.profile&.avatar&.attached?
+                    = image_tag current_user.profile.avatar
+                  - else
+                    = image_tag 'default-icon.png'
                 %ul#nav-content_list
                   %li#nav-content_list_item= link_to 'HOMEに戻る', root_path
                   %li#nav-content_list_item= link_to 'プロフィール', profile_path
@@ -32,8 +35,8 @@
                   %li#nav-content_list_item= link_to '投稿内容一覧', articles_path
                   %li#nav-content_list_item= link_to 'タイムライン', '#'
                   %li#nav-content_list_item= link_to 'いいね一覧', favorites_path
-                  %li#nav-content_list_item= link_to 'フォローリスト', '#'
-                  %li#nav-content_list_item= link_to 'フォロワーリスト', '#'
+                  %li#nav-content_list_item= link_to 'フォローリスト', followings_path
+                  %li#nav-content_list_item= link_to 'フォロワーリスト', followers_path
                   %li#nav-content_list_item= link_to 'ユーザー検索', '#'
         %div
           %ul.header_list
@@ -43,8 +46,8 @@
             %li.header_list_item= link_to '投稿内容一覧', articles_path
             %li.header_list_item= link_to 'タイムライン', '#'
             %li.header_list_item= link_to 'いいね一覧', favorites_path
-            %li.header_list_item= link_to 'フォローリスト', '#'
-            %li.header_list_item= link_to 'フォロワーリスト', '#'
+            %li.header_list_item= link_to 'フォローリスト', followings_path
+            %li.header_list_item= link_to 'フォロワーリスト', followers_path
             %li.header_list_item= link_to 'ユーザー検索', '#'
     .container
       - if flash.present?

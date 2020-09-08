@@ -7,6 +7,11 @@
         %p.profilePage_user_actionButton_edit= link_to '変更', edit_profile_path
         =link_to new_article_path do
           %span.fa.fa-pen.profilePage_user_actionButton_new
+      - else
+        - if current_user&.has_followed?(user)
+          %p.profilePage_user_actionButton_unfollow= link_to 'フォロー中', account_unfollows_path(user), data: {method: 'post'}
+        - else
+          %p.profilePage_user_actionButton_follow= link_to 'フォローする', account_follows_path(user), data: {method: 'post'}
     .profilePage_user_image
       = image_tag user.avatar_image
     .profilePage_user_basicInfo
@@ -21,11 +26,11 @@
         .profilePage_user_musical-instrument
           = user.musical_instrument || '未入力'
         .profilePage_user_follow
-          = link_to '#' do
-            フォロー: ?
+          = link_to user_following_path(user) do
+            フォロー: #{user.followings.count}
         .profilePage_user_follower
-          = link_to '#' do
-            フォロワー: ?
+          = link_to user_follower_path(user) do
+            フォロワー: #{user.followers.count}
       .profilePage_user_introduction
         = user.profile&.introduction || '未入力'
     - user.articles.each do |article|
