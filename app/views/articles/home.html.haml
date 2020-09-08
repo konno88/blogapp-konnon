@@ -4,7 +4,10 @@
       %h1 あなたの演奏を
     .home_title2
       %h1 みんなとの演奏に
-    %button.btn.btn_login ログイン
+    - if user_signed_in?
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn_logout'
+    - else
+      %button.btn.btn_login ログイン
     .modal_wrap
       .modal_content
         .modal_login 今すぐログイン!
@@ -16,7 +19,7 @@
               %span.fa.fa-google
                 Googleでログイン
           .modal_login_item_signin
-            既にアカウントをお持ちの方はこちら←
+            既にアカウントをお持ちの方は#{link_to 'こちら', new_user_session_path}←
           .modal_login_item_signup
-            新しくアカウントを作成する方はこちら←
+            新しくアカウントを作成する方は#{link_to 'こちら', new_user_registration_path}←
 = javascript_pack_tag 'modal'
