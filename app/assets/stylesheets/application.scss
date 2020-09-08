@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ @import './variables';
+ @import 'header';
+ @import 'nav';
+
+ html {
+
+ }
+
+ body {
+    background-size: cover;
+    background-image: image-url('guitar.png');
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+
+    &.clear::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $text-base-color;
+}

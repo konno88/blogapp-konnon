@@ -1,0 +1,149 @@
+@import 'modal';
+
+.btn {
+    cursor: pointer;
+    padding: 6px 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: lightblue;
+    height: 35px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+    .btn_login {
+        width: 160px;
+        position: fixed;
+        left: 44%;
+        bottom: 0px;
+        display: block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        padding: 6px 5px;
+        font-size: 18px;
+    }
+
+    .btn_logout{
+        width: 160px;
+        position: fixed;
+        left: 44%;
+        bottom: 0;
+        display: block;
+        background-color: #00CC99;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn_close {
+        margin-top: 10px;
+        position: absolute;
+        right: 15px;
+        color: silver;
+    }
+
+    .btn_close-comment {
+        margin-top: 0px;
+        position: absolute;
+        right: 0px;
+        color: silver;
+    }
+
+    .btn_close:hover {
+        color: slategray;
+        cursor: pointer;
+    }
+
+    .btn_close-comment:hover {
+        color: slategray;
+        cursor: pointer;
+    }
+
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 1024px) {
+    .btn_login {
+        position: fixed;
+        left: 50%;
+        margin-left: -80px;
+        bottom: 0;
+    }
+
+    .btn_logout {
+        position: fixed;
+        left: 50%;
+        margin-left: -80px;
+        bottom: 0;
+        line-height: 35px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .btn_login {
+        height: 50px;
+        width: 200px;
+        position: fixed;
+        left: 50%;
+        margin-left: -100px;
+        bottom: 0;
+        font-size: 20px;
+    }
+
+    .btn_logout {
+        height: 50px;
+        width: 200px;
+        position: fixed;
+        left: 50%;
+        margin-left: -100px;
+        bottom: 0;
+        font-size: 20px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .btn_login {
+        height: 75px;
+        width: 300px;
+        position: fixed;
+        left: 50%;
+        margin-left: -150px;
+        bottom: 0;
+        font-size: 30px;
+    }
+
+    .btn_logout {
+        height: 75px;
+        width: 300px;
+        position: fixed;
+        left: 50%;
+        margin-left: -150px;
+        bottom: 0;
+        font-size: 30px;
+        line-height: 75px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .btn_login {
+        height: 100px;
+        width: 400px;
+        position: fixed;
+        left: 50%;
+        margin-left: -200px;
+        bottom: 0;
+        font-size: 40px;
+    }
+
+    .btn_logout {
+        height: 100px;
+        width: 400px;
+        position: fixed;
+        left: 50%;
+        margin-left: -200px;
+        bottom: 0;
+        font-size: 40px;
+        line-height: 100px;
+    }
+}
