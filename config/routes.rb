@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
     resource :like, only: [:show, :create, :destroy]
   end
+
+  resources :favorites, only: [:index]
 end

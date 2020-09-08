@@ -1,0 +1,5 @@
+.container
+  .fovarites
+    %h2.fovarites_item いいね一覧
+    - @articles.each do |article|
+      = render 'commons/article', article: article

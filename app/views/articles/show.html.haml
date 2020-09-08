@@ -21,7 +21,10 @@
         .show_detail_content_name
           = image_tag 'default-icon.png'
         - if user_signed_in?
-          = image_tag 'heart.svg'
+          .show_detail_content_heart.hidden.active-heart
+            = image_tag 'heart-active.svg' 
+          .show_detail_content_heart.hidden.inactive-heart
+            = image_tag 'heart.svg'
     .show-comment-content
       .show-comment-wrap
         .show_comment
@@ -42,4 +45,5 @@
       %ul.show_comments_index_list
         - @comments.each do |comment|
           %li.show_comments_index_list_item= comment.content
+= javascript_pack_tag 'article'
 = javascript_pack_tag 'comment-open-close'
