@@ -1,0 +1,216 @@
+@import 'variables';
+
+.profilePage_user {
+    padding: 10px;
+    background-color: rgba(#008080, 0.6);
+    position: relative;
+
+    &_title {
+        position: absolute;
+        top: -12px;
+        left: 0;
+        background-color: #fff;
+        border-radius: 7px;
+        min-width: 160px;
+        text-align: center;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-weight: bold;
+    }
+
+    &_actionButton {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+
+        &_chat {
+            display: block;
+            text-align: center;
+            border: 1px solid #fff;
+            background-color: #ff6666;
+            padding: 7px 9px;
+            border-radius: 999px;
+            font-weight: bold;
+        }
+
+        &_form {
+
+            &_chat {
+                color: white;
+                display: block;
+                text-align: center;
+                border: 1px solid #fff;
+                background-color: #ff6666;
+                padding: 7px 9px;
+                border-radius: 999px;
+                font-weight: bold;
+            }
+
+            &_chat:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+
+
+        &_unfollow {
+            margin-bottom: 10px;
+        
+            a {
+                color: white;
+                font-weight: bold;
+                border: 1px solid #fff;
+                padding: 7px 9px;
+                border-radius: 999px;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-right: 0;
+                background-color: #55aece;
+            }
+
+            a:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+
+        &_follow {
+
+            a {
+                color: #fff;
+                font-weight: bold;
+                border: 1px solid #fff;
+                padding: 7px 9px;
+                border-radius: 999px;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-right: 0;
+            }
+
+            a:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+
+        &_edit {
+
+            a {
+                color: #fff;
+                font-weight: bold;
+                border: 1px solid #fff;
+                padding: 7px 9px;
+                border-radius: 999px;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-right: 0;
+                background-color: #008000;
+            }
+        }
+
+        a {
+            color: white;
+
+            span {
+                display: block;
+                margin-right: 10px;
+                text-align: right;
+            }
+        }
+    }
+
+    &_image {
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    &_image img {
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+    }
+
+    &_displayName {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+        position: relative;
+    }
+
+    &_birthday {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_location {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_musical-instrument {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_follow {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_follow a {
+        color: black;
+    }
+
+    &_follower  {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_follower a {
+        color: black;
+    }
+
+    &_introduction  {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .profilePage_user {
+        &_displayName, &_birthday, &_introduction, &_location, &_musical-instrument, &_follow , &_follower {
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .profilePage_user {
+        font-size: 30px;
+
+        &_image {
+            padding-top: 40px;
+        }
+
+        &_image img {
+            width: 250px;
+            height: 250px;
+        }
+
+        &_actionButton {
+            a {
+                span {
+                    line-height: 105px;
+                }
+            }
+        }
+    }
+}

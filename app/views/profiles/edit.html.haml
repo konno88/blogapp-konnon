@@ -1,0 +1,38 @@
+.container
+  %ul.message
+    - @profile.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    .form
+      %div
+        = f.label :avatar, 'アイコン', class: 'form_icon'
+      %div
+        = f.file_field :avatar, class: 'form_icon_field'
+      %div
+        = f.label :nickname, 'ハンドルネーム', class: 'form_name'
+      %div
+        = f.text_field :nickname, class: 'form_name_nickName'
+      %div
+        = f.label :introduction, '自己紹介', class: 'form_introduction'
+      %div
+        = f.text_area :introduction, class: 'form_introduction_text'
+      %div
+        = f.label :gender, '性別', class: 'form_gender'
+      %div
+        = f.select :gender, Profile.genders.map {|k, v| [I18n.t("enum.genders.#{k}"), k]}, {}, {class: 'form_gender_text'}
+      %div
+        = f.label :location, '今住んでいる県', class: 'form_location'
+      %div
+        = f.select :location, Profile.locations.keys, {prompt: '選択してください'}, {class: 'form_location_text'}
+      %div
+        = f.label :musical_instrument, '得意な楽器', class: 'form_musical-instrument'
+      %div
+        = f.select :musical_instrument, Profile.musical_instruments.keys, {prompt: '選択してください'}, {class: 'form_musical-instrument_text'}
+      %div
+        = f.label :birthday, '生年月日', class: 'form_birthday'
+      %div
+        = f.date_field :birthday, class: 'form_birthday_text'
+      %div
+        = f.label :subscribed, '通知を受け取る', class: 'form_subscribed'
+        = f.check_box :subscribed, class: 'form_subscribed_text'
+      = f.submit '保存', class: 'btn-primary'

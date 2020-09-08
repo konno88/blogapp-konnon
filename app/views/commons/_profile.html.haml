@@ -1,0 +1,32 @@
+.container
+  .profilePage_user
+    .profilePage_user_title
+      プロフィール
+    .profilePage_user_actionButton
+      - if current_user == user
+        %p.profilePage_user_actionButton_edit= link_to '変更', edit_profile_path
+        =link_to new_article_path do
+          %span.fa.fa-pen.profilePage_user_actionButton_new
+    .profilePage_user_image
+      = image_tag user.avatar_image
+    .profilePage_user_basicInfo
+      .profilePage_user_name
+        .profilePage_user_displayName
+          = user.display_name
+          \/#{user.age || '？歳'}/#{I18n.t("enum.genders.#{user.gender || 'unknown'}")}
+        .profilePage_user_birthday
+          = user.birthday || '未入力'
+        .profilePage_user_location
+          = user.location || '未入力'
+        .profilePage_user_musical-instrument
+          = user.musical_instrument || '未入力'
+        .profilePage_user_follow
+          = link_to '#' do
+            フォロー: ?
+        .profilePage_user_follower
+          = link_to '#' do
+            フォロワー: ?
+      .profilePage_user_introduction
+        = user.profile&.introduction || '未入力'
+    - user.articles.each do |article|
+      = render 'commons/article', article: article
