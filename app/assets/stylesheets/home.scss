@@ -1,0 +1,39 @@
+@media screen and (min-width: 320px) {
+    .home_title2, .home_title1 {
+        font-size: 10px;
+    }
+
+    .home_title2 {
+        margin-left: 40%;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .home_title2, .home_title1 {
+        font-size: 12px;
+    }
+
+    .home_title2 {
+        margin-left: 40%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .home_title2, .home_title1 {
+        font-size: 15px;
+    }
+
+    .home_title2 {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .home_title2, .home_title1 {
+        font-size: 25px;
+    }
+
+    .home_title2 {
+        margin-left: 0;
+    }
+}

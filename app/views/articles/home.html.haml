@@ -1,0 +1,22 @@
+.container
+  .home
+    .home_title1
+      %h1 あなたの演奏を
+    .home_title2
+      %h1 みんなとの演奏に
+    %button.btn.btn_login ログイン
+    .modal_wrap
+      .modal_content
+        .modal_login 今すぐログイン!
+        .btn_close
+          %i.far.fa-times-circle
+        .modal_login_item
+          %button.modal_login_item_google
+            =link_to '#' do
+              %span.fa.fa-google
+                Googleでログイン
+          .modal_login_item_signin
+            既にアカウントをお持ちの方はこちら←
+          .modal_login_item_signup
+            新しくアカウントを作成する方はこちら←
+= javascript_pack_tag 'modal'

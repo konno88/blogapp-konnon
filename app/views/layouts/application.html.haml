@@ -1,0 +1,49 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BlogappKonnon
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width-device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{:href => "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %script{:crossorigin => "anonymous", :src => "https://kit.fontawesome.com/abaca9e9d6.js"}
+  %body
+    %header.header
+      .container.clear
+        .header_items
+          .header_left
+            %h2.header_title= link_to 'GO_channel', root_path
+          .header_right
+            #nav-drawer
+              %input#nav-input.nav-unshown{:type => "checkbox"}/
+              %label#nav-open.nav-open{:for => "nav-input"}
+                %span
+              %label#nav-close.nav-unshown{:for => "nav-input"}
+              #nav-content
+                #nav-content_head
+                  = image_tag 'default-icon.png'
+                %ul#nav-content_list
+                  %li#nav-content_list_item= link_to 'HOMEに戻る', root_path
+                  %li#nav-content_list_item= link_to 'プロフィール', '#'
+                  %li#nav-content_list_item= link_to '投稿する', '#'
+                  %li#nav-content_list_item= link_to '投稿内容一覧', '#'
+                  %li#nav-content_list_item= link_to 'タイムライン', '#'
+                  %li#nav-content_list_item= link_to 'いいね一覧', '#'
+                  %li#nav-content_list_item= link_to 'フォローリスト', '#'
+                  %li#nav-content_list_item= link_to 'フォロワーリスト', '#'
+                  %li#nav-content_list_item= link_to 'ユーザー検索', '#'
+        %div
+          %ul.header_list
+            %li.header_list_item= link_to 'HOMEに戻る', root_path
+            %li.header_list_item= link_to 'プロフィール', '#'
+            %li.header_list_item= link_to '投稿する', '#'
+            %li.header_list_item= link_to '投稿内容一覧', '#'
+            %li.header_list_item= link_to 'タイムライン', '#'
+            %li.header_list_item= link_to 'いいね一覧', '#'
+            %li.header_list_item= link_to 'フォローリスト', '#'
+            %li.header_list_item= link_to 'フォロワーリスト', '#'
+            %li.header_list_item= link_to 'ユーザー検索', '#'
+    = yield
