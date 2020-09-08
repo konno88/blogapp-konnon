@@ -1,0 +1,183 @@
+@import 'variables';
+
+.show {
+    background-color: rgba(255, 255, 255, 0.6);
+    min-height: 100vh;
+    padding: 20px 20px;
+    position: relative;
+    overflow-y: scroll;
+
+    &_date {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    &_title {
+        border-bottom: 1px dotted sienna;
+    }
+
+    &_content {
+        border-top: 1px solid silver;
+        border-bottom: 1px dotted sienna;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+    
+    &_detail {
+        position: relative;
+        margin-top: 40px;
+
+        &_content {
+            display: flex;
+            position: absolute;
+            right: 0;
+        
+
+            &_name {
+                display: flex;
+            }
+
+            &_name img {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+            }
+
+            &_heart img {
+                width: 40px;
+                height: 40px;
+                margin-top: 5px;
+                margin-left: 15px;
+                border-radius: 0;
+            }
+       }
+    }
+
+    &_comment {
+        margin-top: 57px;
+        width: 130px;
+
+        &_view {
+            color: $text-base-color;
+        }
+    }
+
+    &_comment:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    &_comments {
+        height: 24px;
+        &_view {
+            color: $text-base-color;
+        }
+    }
+
+    &_comments:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    &_comments_index {
+        display: none;
+        min-height: 100vh;
+        background-color: rgba(223, 210, 210, 0.6);
+        position: relative;
+
+        &_list {
+            padding-left: 0px;
+            padding-right: 0;
+
+            &_item {
+                list-style: none;
+                padding-top: 8px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 8px;
+                border-bottom: 1px dotted sienna;
+            }
+        }
+    }
+
+    &_image {
+        margin-top: 40px;
+    }
+
+    &_image img {
+        display: block;
+        width: 60%;
+        height: 140px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.fa-comment {
+    margin-left: 5px;
+}
+
+.fa-list-ol {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .show_detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .show-comment-wrap  {
+        max-width: 137px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .show_comments_view {
+        display: flex;
+    }
+
+    .show_comments_view span {
+        padding-top: 4px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .show_image img {
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .show_image img {
+        height: 260px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .show_image img {
+        height: 420px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .show {
+        font-size: 30px;
+
+        &_comment {
+            width: 260px;
+        }
+
+        &_comments {
+
+            &_view {
+                width: 260px;
+            }
+        }
+    }
+
+    .show_image img {
+        height: 660px;
+    }
+}
