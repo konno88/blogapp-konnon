@@ -19,7 +19,8 @@
     .show_detail
       .show_detail_content
         .show_detail_content_name
-          = image_tag 'default-icon.png'
+          = link_to account_path(@article.user) do
+            = image_tag @article.user.avatar_image
         - if user_signed_in?
           .show_detail_content_heart.hidden.active-heart
             = image_tag 'heart-active.svg' 

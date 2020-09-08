@@ -1,0 +1,87 @@
+.followings {
+    background-color: rgba(#fff, 0.6);
+
+    &_index {
+
+        &_user {
+            position: relative;
+            border-bottom: 1px solid #c0c0c0;
+            display: flex;
+
+            &_image img {
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                margin-right: 20px;
+                padding: 5px 0 5px 5px;
+            }
+
+            &_name  {
+                height: auto;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: black;
+            }
+
+            &_introduction {
+                height: auto;
+                font-weight: lighter;
+                color: black;
+            }
+        }
+
+        &_user:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .followings {
+
+        &_index {
+
+            &_user {
+
+                &_image img {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                &_name {
+                    font-size: 14px;
+                    margin-bottom: 6px;
+                }
+
+                &_introduction {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .followings {
+
+        &_index {
+
+            &_user {
+
+                &_image img {
+                    width: 240px;
+                    height: 240px;
+                }
+
+                &_name {
+                    font-size: 33px;
+                    margin-bottom: 20px;
+                }
+
+                &_introduction {
+                    font-size: 33px;
+                }
+            }
+        }
+    }
+}

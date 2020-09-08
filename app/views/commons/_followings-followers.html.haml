@@ -1,0 +1,13 @@
+.container
+  .followings
+    .followings_index
+      - users.each do |user|
+        = link_to account_path(user) do
+          .followings_index_user
+            .followings_index_user_image
+              = image_tag user.avatar_image
+            .followings_index_user_text
+              .followings_index_user_name
+                = user.display_name
+              .followings_index_user_introduction
+                = user.profile&.introduction
