@@ -1,0 +1,24 @@
+.fovarites {
+
+    &_item {
+        color: #fff;
+        background-color: #FF99CC;
+        width: 200px;
+        text-align: center;
+        padding: 5px 4px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .fovarites_item {
+        height: 70px;
+        width: 300px;
+        border-radius: 40px;
+        line-height: 70px;
+        font-size: 32px;
+    }
+}

@@ -6,10 +6,16 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :articles, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :favorites_articles, through: :likes, source: :article
 
   
   def has_written?(article)
     articles.exists?(id: article.id)
+  end
+
+  def has_liked?(article)
+    likes.exists?(article_id: article.id)
   end
   
   protected
