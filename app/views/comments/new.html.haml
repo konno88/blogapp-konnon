@@ -1,0 +1,11 @@
+.container
+  %ul
+    - @comment.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @comment, url: article_comments_path(@comment.article), local: true) do |f|
+    .form
+      %div
+        = f.label :content, 'コメントを残す', class: 'form_content'
+      %div
+        = f.text_area :content, class: 'form_content_text'
+        = f.submit '送信する', class: 'btn-primary'

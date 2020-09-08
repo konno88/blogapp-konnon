@@ -22,3 +22,24 @@
           = image_tag 'default-icon.png'
         - if user_signed_in?
           = image_tag 'heart.svg'
+    .show-comment-content
+      .show-comment-wrap
+        .show_comment
+          = link_to new_article_comment_path(@article) do
+            %p.show_comment_view
+              コメントする
+              %span.fa.fa-comment
+        .show_comments
+          .dropdown
+            %p.show_comments_view.dropbtn-comments
+              コメント一覧  
+              %span.fa.fa-list-ol
+            .dropdown-content-comments.mini
+              %p.show_comments_open 開く
+    .show_comments_index
+      .btn_close-comment
+        %i.far.fa-times-circle
+      %ul.show_comments_index_list
+        - @comments.each do |comment|
+          %li.show_comments_index_list_item= comment.content
+= javascript_pack_tag 'comment-open-close'
