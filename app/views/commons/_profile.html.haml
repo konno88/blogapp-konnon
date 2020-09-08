@@ -12,6 +12,15 @@
           %p.profilePage_user_actionButton_unfollow= link_to 'フォロー中', account_unfollows_path(user), data: {method: 'post'}
         - else
           %p.profilePage_user_actionButton_follow= link_to 'フォローする', account_follows_path(user), data: {method: 'post'}
+      - if current_user.has_followed?(user) && user.has_followed?(current_user)
+        - if @InRoom == true
+          %p.profilePage_user_actionButton_chat= link_to 'チャットへ', room_path(@roomId)
+        - else
+          %p.profilePage_user_actionButton_form
+            = form_with model: @room, url: rooms_path, local: true do |f|
+              = fields_for @entry do |entry|
+                = entry.hidden_field :user_id, value: @user.id
+              = f.submit 'チャットを始める', class: 'profilePage_user_actionButton_form_chat'
     .profilePage_user_image
       = image_tag user.avatar_image
     .profilePage_user_basicInfo

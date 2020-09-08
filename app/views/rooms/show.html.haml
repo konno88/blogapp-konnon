@@ -1,0 +1,25 @@
+.container 
+  .chats
+    .chats_index
+      - if @messages.present?
+        - @messages.each do |message|
+          - if current_user.has_comment?(message)
+            = link_to message_path(message.id), data: {method: 'delete', confirm: "この内容を削除しますか？「#{message.content}」"} do
+              .chats_index_item
+                .chats_index_item_image
+                  = image_tag message.user.avatar_image
+                .chats_index_item_content
+                  = message.content
+          - else
+            .chats_index_item
+              .chats_index_item_image
+                = image_tag message.user.avatar_image
+              .chats_index_item_content
+                = message.content
+      - else
+        %p メッセージはまだありません
+    .chats_form
+      = form_with model: @message, url: messages_path, local: true do |f|
+        = f.text_field :content, placeholder: 'メッセージを入力', class: 'chats_form_content'
+        = f.hidden_field :room_id, value: @room.id
+        =f.submit '送信', class: 'chats_form_submit'
