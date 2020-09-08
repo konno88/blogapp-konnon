@@ -1,0 +1,26 @@
+@import 'variables';
+
+.signin, .account-create, .cg-pwd, .forget {
+    color: $text-base-color;
+}
+
+.text {
+    padding: 5px;
+    width: 100%;
+    border: none;
+    background-color: rgba(255,255,255, 0.6);
+    margin-bottom: 20px;
+}
+
+.login, .signup, .cg-pwd-btn, .forget-pwd {
+    margin-bottom: 20px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #008080;
+}
+
+.login {
+    margin-top: 20px;
+}

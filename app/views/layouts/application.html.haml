@@ -46,4 +46,9 @@
             %li.header_list_item= link_to 'フォローリスト', '#'
             %li.header_list_item= link_to 'フォロワーリスト', '#'
             %li.header_list_item= link_to 'ユーザー検索', '#'
+    .container
+      - if flash.present?
+        .flash
+          - flash.each do |key, value|
+            %div{:class => key}= value
     = yield
