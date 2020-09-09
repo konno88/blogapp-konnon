@@ -1,0 +1,16 @@
+{
+    "name": "blogapp konnon",
+    "description": "This is blogappkonnon",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/konno88/blogapp-konnon",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
