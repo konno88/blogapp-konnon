@@ -1,24 +1,43 @@
-# README
+https://img.shields.io/badge/Ruby%20-2.6.5p114-red https://img.shields.io/badge/Rails%20-6.0.3.2-important
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Go-channel
 
-Things you may want to cover:
+## What is the Go-channel?
 
-* Ruby version
+Go-channel is a matching app that supports people who like songs and musical instruments to play together.
 
-* System dependencies
+![Readme1]
+(https://user-images.githubusercontent.com/68778872/92914243-69609400-f466-11ea-959f-f550cf555951.png)
 
-* Configuration
+## Features
 
-* Database creation
+This app has a user search function, and you can find the user who is good at the instrument by selecting and searching for the instrument. In addition, you will be able to chat by following each other, and you can smoothly adjust the schedule of the meeting date.
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+```bash
+git clone https://github.com/konno88/blogapp-konnon
+cd blogapp-konnon
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Note
 
-* Deployment instructions
+* Precautions whin using chat.
 
-* ...
+When you follow each other for the first time, the character 'チャットを始める' will appear. Please load at that time just incase.
+
+## Author 
+
+* Author 
+
+Go konno
+
+* Belongs
+
+Akita University
+
+* E-mail
+
+xiangjinye1@gmail.com
+
