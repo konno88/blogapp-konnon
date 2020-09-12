@@ -1,4 +1,4 @@
-https://img.shields.io/badge/Ruby%20-2.6.5p114-red https://img.shields.io/badge/Rails%20-6.0.3.2-important
+![Ruby](https://img.shields.io/badge/Ruby%20-2.6.5p114-red) ![Rails](https://img.shields.io/badge/Rails%20-6.0.3.2-important)
 
 # Go-channel
 
@@ -6,8 +6,7 @@ https://img.shields.io/badge/Ruby%20-2.6.5p114-red https://img.shields.io/badge/
 
 Go-channel is a matching app that supports people who like songs and musical instruments to play together.
 
-![Readme1]
-(https://user-images.githubusercontent.com/68778872/92914243-69609400-f466-11ea-959f-f550cf555951.png)
+![Readme1](https://user-images.githubusercontent.com/68778872/92993481-dd656f80-f52c-11ea-8240-b41e1d77289c.png)
 
 ## Features
 
