@@ -22,7 +22,7 @@ rails s
 
 ## Note
 
-* Precautions whin using chat.
+* Precautions when using chat.
 
 When you follow each other for the first time, the character 'チャットを始める' will appear. Please load at that time just incase.
 
