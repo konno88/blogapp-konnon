@@ -10,33 +10,52 @@ Go-channel is a matching app that supports people who like songs and musical ins
 
 ## Features
 
-This app has a user search function, and you can find the user who is good at the instrument by selecting and searching for the instrument. In addition, you will be able to chat by following each other, and you can smoothly adjust the schedule of the meeting date.
+### Implemented function
+
+* Posting an article.
+
+* Add comments to articles.
+
+* Like the article.
+
+* User follow.
+
+* User search.
+
+* One-on-one chat.
+
+### Gem file used
+
+```bash
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'faker'
+gem 'hamlit'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'aws-sdk-s3'
+gem 'image_processing', '~> 1.2'
+gem 'dotenv-rails'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'erb2haml'
+```
 
 ## Usage
 
-```bash
-git clone https://github.com/konno88/blogapp-konnon
-cd blogapp-konnon
-rails s
-```
+1. First, press the login button and enter your email and password to create a new account. If you press the "sign up" button and the button at the bottom of the screen switches to "ログアウト", you are successful.
+
+2. Once you are logged in, create a profile. You can create a profile by pressing "プロフィール" from the menu bar at the top right of the screen and clicking "変更".
+
+3. Once you have a profile, feel free to use it. You can also post articles, search for users who have the same instrument as a hobby, follow them, chat, and interact with them.
 
 ## Note
 
-* Precautions when using chat.
+### Precautions when using chat.
 
 When you follow each other for the first time, the character 'チャットを始める' will appear. Please load at that time just incase.
 
 ## Author 
 
-* Author 
-
 Go konno
-
-* Belongs
-
-Akita University
-
-* E-mail
-
-xiangjinye1@gmail.com
 
