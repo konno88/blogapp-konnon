@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :groups, through: :entries
 
   delegate :birthday, :age, :gender, :location, :musical_instrument, to: :profile, allow_nil: true
 

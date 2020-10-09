@@ -1,0 +1,16 @@
+.container
+  .followings
+    .followings_index
+    - if @groups.present?
+      - @groups.each do |group|
+        = link_to group_path(id: group.id) do
+          .followings_index_user
+            .followings_index_user_image
+              = image_tag group.user.avatar_image
+            .followings_index_user_text
+              .followings_index_user_name
+                = group.user.display_name
+              .followings_index_user_introduction
+                = group.group_name
+    - else
+      %p.followings_index_description グループが存在しません
