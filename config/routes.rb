@@ -36,4 +36,6 @@ Rails.application.routes.draw do
   resources :rooms, only: [:create, :show] 
     
   resources :messages, only: [:create, :destroy]
+
+  resources :groups, only: [:create, :index, :edit, :new, :show]
 end

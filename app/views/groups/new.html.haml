@@ -1,0 +1,11 @@
+.container
+  %ul.message
+    - @group.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @group, local: true) do |f|
+    %div
+      = f.label :group_name, 'グループ名', class: 'form_group'
+    %div
+      = f.text_field :group_name, class: 'form_group_text'
+    %div
+      = f.submit 'グループを作成する', class: 'btn-primary'
