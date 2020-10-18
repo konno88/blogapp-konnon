@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
-    has_many :messages, dependent: :destroy
-    has_many :entries, dependent: :destroy
+    has_many :user_groups, dependent: :destroy
+    has_many :users, through: :user_groups
+    has_many :posts, dependent: :destroy
 
-    belongs_to :user
     validates :group_name, presence: true
 end
