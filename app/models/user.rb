@@ -15,7 +15,9 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
-  has_many :groups, through: :entries
+  has_many :user_groups, dependent: :destroy
+  has_many :groups, through: :user_groups
+  has_many :posts, dependent: :destroy
 
   delegate :birthday, :age, :gender, :location, :musical_instrument, to: :profile, allow_nil: true
 
@@ -63,6 +65,10 @@ class User < ApplicationRecord
 
   def has_comment?(message)
     messages.exists?(id: message.id)
+  end
+
+  def has_post?(post)
+    posts.exists?(id: post.id)
   end
 
   private
