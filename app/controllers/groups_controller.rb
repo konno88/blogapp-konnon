@@ -6,9 +6,9 @@ class GroupsController < ApplicationController
     end
 
     def create
-        group = Group.new(group_params)
-        if group.save
-            @group1 = UserGroup.create(group_id: group.id, user_id: current_user.id)
+        @group = Group.new(group_params)
+        if @group.save
+            @group1 = UserGroup.create(group_id: @group.id, user_id: current_user.id)
             redirect_to action: 'index', notice: 'グループを作成しました'
         else
             flash.now[:error] = 'グループの作成に失敗しました'
@@ -20,7 +20,8 @@ class GroupsController < ApplicationController
         @groups = Group.all.order(created_at: :desc)
         @groups_joining = UserGroup.where(user_id: current_user.id)
         @groups_lists_none = "グループに参加していません"
-
+        @q = Group.with_keywords(params.dig(:q, :keywords)).ransack(params[:q])
+        @groups_result = @q.result
     end
 
     def show

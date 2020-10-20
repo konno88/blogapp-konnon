@@ -1,5 +1,10 @@
 .chats {
-    
+
+    &_back {
+        margin-left: 95%;
+        font-size: 20px;
+    }
+
     &_index {
 
         &_item {
@@ -79,6 +84,10 @@
                 font-size: 40px;
                 padding: 10px 17px;
             }
+        }
+
+        &_back {
+            font-size: 50px;
         }
     }
 }

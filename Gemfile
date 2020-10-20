@@ -27,6 +27,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'aws-sdk-s3', require: false
+gem 'ransack'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
