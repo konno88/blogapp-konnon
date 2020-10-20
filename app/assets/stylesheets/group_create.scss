@@ -1,0 +1,44 @@
+.group_create {
+    text-align: center;
+    &_name {
+        font-weight: bolder;
+        
+    }
+
+    &_content {
+        padding: 10px 10px;
+        width: 70%;
+        border-radius: 20px;
+        border: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    &_button {
+        padding: 7px 5px;
+        border-radius: 20px;
+        border: none;
+        background-color: orangered;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .group_create {
+
+        &_name {
+            font-size: 50px;
+        }
+
+        &_content {
+            padding: 30px;
+            font-size: 40px;
+        }
+
+        &_button {
+            padding: 15px 20px;
+            font-size: 40px;
+            margin-top: 40px;
+        }
+    }
+}

@@ -1,3 +1,10 @@
+.home {
+
+    &_chat {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 320px) {
     .home_title2, .home_title1 {
         font-size: 10px;
@@ -29,8 +36,33 @@
 }
 
 @media screen and (min-width: 2560px) {
+    .home_chat {
+        display: block;
+        position: absolute;
+        top: 250px;
+        right: 5%;
+        font-size: 30px;
+
+        a {
+            color: white;
+            background-color: royalblue;
+            padding: 7px 5px;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        &_new {
+           
+        }
+
+        &_index {
+            text-align: center;
+        }
+    }
+
     .home_title2, .home_title1 {
-        font-size: 25px;
+        font-size: 40px;
     }
 
     .home_title2 {

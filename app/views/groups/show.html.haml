@@ -1,25 +1,30 @@
-.container 
-  .chats
-    .chats_index
-      - if @posts.present?
-        - @posts.each do |post|
-          - if current_user.has_post?(post)
-            = link_to post_path(post.id), data: {method: 'delete', confirm: "この内容を削除しますか？「#{post.content}」"} do
-              .chats_index_item
-                .chats_index_item_image
-                  = image_tag post.user.avatar_image
-                .chats_index_item_content
-                  = post.content
-          - else
-            .chats_index_item
-              .chats_index_item_image
-                = image_tag post.user.avatar_image
-              .chats_index_item_content
-                = post.content
-      - else
-        %p メッセージはまだありません
-    .chats_form
-      = form_with model: @post, url: posts_path, local: true do |f|
-        = f.text_field :content, placeholder: 'メッセージを入力', class: 'chats_form_content'
-        = f.hidden_field :group_id, value: @group.id
-        =f.submit '送信', class: 'chats_form_submit'
+%body#group-chat
+  .container 
+    .chats   
+      = link_to groups_path do
+        .chats_back
+          %i.fa.fa-reply
+      .chats_index
+        - if @posts.present?
+          - @posts.each do |post|
+            - if current_user.has_post?(post)
+              = link_to post_path(post.id), data: {method: 'delete', confirm: "この内容を削除しますか？「#{post.content}」"} do
+                .chats_index_item
+                  .chats_index_item_image
+                    = image_tag post.user.avatar_image
+                  .chats_index_item_content
+                    = post.content
+            - else
+              = link_to account_path(post.user_id) do
+                .chats_index_item
+                  .chats_index_item_image
+                    = image_tag post.user.avatar_image
+                  .chats_index_item_content
+                    = post.content
+        - else
+          %p メッセージはまだありません
+      .chats_form
+        = form_with model: @post, url: posts_path, local: true do |f|
+          = f.text_field :content, placeholder: 'メッセージを入力', class: 'chats_form_content'
+          = f.hidden_field :group_id, value: @group.id
+          =f.submit '送信', class: 'chats_form_submit'

@@ -4,6 +4,11 @@
       %h1 あなたの演奏を
     .home_title2
       %h1 みんなとの演奏に
+    .home_chat
+      .home_chat_new
+        = link_to '仲間を集める', new_group_path
+      .home_chat_index
+        = link_to '募集一覧', groups_path
     - if user_signed_in?
       = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn_logout'
     - else

@@ -1,11 +1,16 @@
-.container
-  %ul.message
-    - @group.errors.full_messages.each do |message|
-      %li= message
-  = form_with(url: groups_path, model: @group, local: true) do |f|
-    %div
-      = f.label :group_name, 'グループ名', class: 'form_group'
-    %div
-      = f.text_field :group_name, class: 'form_group_text'
-    %div
-      = f.submit 'グループを作成する', class: 'btn-primary'
+%body#group
+  .container
+    %ul.message
+      - @group.errors.full_messages.each do |message|
+        %li= message
+    = link_to groups_path do
+      .chats_back
+        %i.fa.fa-reply
+    = form_with(url: groups_path, model: @group, local: true) do |f|
+      .group_create
+        %div
+          = f.label :group__name, 'グループ名', class: 'group_create_name'
+        %div
+          = f.text_field :group_name, class: 'group_create_content', placeholder: '同じ趣味や興味を持つ人とチャットしよう！'
+        %div
+          = f.submit 'グループを作成する', class: 'group_create_button'

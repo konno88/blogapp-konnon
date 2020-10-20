@@ -24,6 +24,12 @@ Go-channel is a matching app that supports people who like songs and musical ins
 
 * One-on-one chat.
 
+* Group creation
+
+* Conversation in a group
+
+* Group search
+
 ### Gem file used
 
 ```bash
@@ -39,6 +45,7 @@ gem 'dotenv-rails'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'erb2haml'
+gem 'ransack'
 ```
 
 ## Usage
@@ -48,6 +55,8 @@ gem 'erb2haml'
 2. Once you are logged in, create a profile. You can create a profile by pressing "プロフィール" from the menu bar at the top right of the screen and clicking "変更".
 
 3. Once you have a profile, feel free to use it. You can also post articles, search for users who have the same instrument as a hobby, follow them, chat, and interact with them.
+
+4. If you want to interact with more users, create and join groups. You can also interact with people who have similar tastes by searching. It's also a good idea to share music information there.
 
 ## Note
 
