@@ -1,7 +1,7 @@
 @import 'variables';
 
 .signin, .account-create, .cg-pwd, .forget {
-    color: $text-base-color;
+    color: black;
 }
 
 .text {
@@ -23,4 +23,8 @@
 
 .login {
     margin-top: 20px;
+}
+
+.devise-link a {
+  color: black;
 }

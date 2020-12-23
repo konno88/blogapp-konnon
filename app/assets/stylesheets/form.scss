@@ -158,6 +158,18 @@
     }
 }
 
+#new {
+    background-image: image-url('new-page.png');
+}
+
+#edit {
+    background-image: image-url('edit-page.png');
+}
+
+#search {
+    background-image: image-url('search-page.png');
+}
+
 @media screen and (min-width: 2560px) {
     .form {
         font-size: 30px;

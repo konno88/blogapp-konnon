@@ -1,8 +1,9 @@
-.container
-  .fovarites
-    %h2.fovarites_item いいね一覧
-    - if @articles.present?
-      - @articles.each do |article|
-        = render 'commons/article', article: article
-    - else
-      %p.favarites_item_description いいねしている記事がありません
+%body#favorites
+  .container
+    .fovarites
+      %h2.fovarites_item いいね一覧
+      - if @articles.present?
+        - @articles.each do |article|
+          = render 'commons/article', article: article
+      - else
+        %p.favarites_item_description いいねしている記事がありません

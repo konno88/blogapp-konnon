@@ -25,13 +25,13 @@
  @import 'trix/dist/trix.css';
 
  html {
-
  }
 
  body {
-    background-size: cover;
-    background-image: image-url('guitar.png');
-    min-height: 100vh;
+    background-image: image-url('toppage.png');
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+    background-position: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 

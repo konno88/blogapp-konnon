@@ -12,6 +12,10 @@
     &_left {
         position: absolute;
         top: 22.25px;
+        a {
+            color: #f2cf01;
+            text-shadow: 2px 2px 1px #003366;
+        }
     }
 
     &_right {

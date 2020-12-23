@@ -184,6 +184,11 @@
     }
 }
 
+#profile {
+    background-image: image-url('profile-page.png');
+    background-size: cover;
+}
+
 @media screen and (max-width: 425px) {
     .profilePage_user {
         &_displayName, &_birthday, &_introduction, &_location, &_musical-instrument, &_follow , &_follower {

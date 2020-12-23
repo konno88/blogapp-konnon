@@ -1,46 +1,47 @@
-.container
-  .profilePage_user
-    .profilePage_user_title
-      プロフィール
-    .profilePage_user_actionButton
-      - if current_user == user
-        %p.profilePage_user_actionButton_edit= link_to '変更', edit_profile_path
-        =link_to new_article_path do
-          %span.fa.fa-pen.profilePage_user_actionButton_new
-      - else
-        - if current_user&.has_followed?(user)
-          %p.profilePage_user_actionButton_unfollow= link_to 'フォロー中', account_unfollows_path(user), data: {method: 'post'}
+%body#profile
+  .container
+    .profilePage_user
+      .profilePage_user_title
+        プロフィール
+      .profilePage_user_actionButton
+        - if current_user == user
+          %p.profilePage_user_actionButton_edit= link_to '変更', edit_profile_path
+          =link_to new_article_path do
+            %span.fa.fa-pen.profilePage_user_actionButton_new
         - else
-          %p.profilePage_user_actionButton_follow= link_to 'フォローする', account_follows_path(user), data: {method: 'post'}
-      - if current_user.has_followed?(user) && user.has_followed?(current_user)
-        - if @InRoom == true
-          %p.profilePage_user_actionButton_chat= link_to 'チャットへ', room_path(@roomId)
-        - else
-          %p.profilePage_user_actionButton_form
-            = form_with model: @room, url: rooms_path, local: true do |f|
-              = fields_for @entry do |entry|
-                = entry.hidden_field :user_id, value: @user.id
-              = f.submit 'チャットを始める', class: 'profilePage_user_actionButton_form_chat'
-    .profilePage_user_image
-      = image_tag user.avatar_image
-    .profilePage_user_basicInfo
-      .profilePage_user_name
-        .profilePage_user_displayName
-          = user.display_name
-          \/#{user.age || '？歳'}/#{I18n.t("enum.genders.#{user.gender || 'unknown'}")}
-        .profilePage_user_birthday
-          = user.birthday || '未入力'
-        .profilePage_user_location
-          = user.location || '未入力'
-        .profilePage_user_musical-instrument
-          = user.musical_instrument || '未入力'
-        .profilePage_user_follow
-          = link_to user_following_path(user) do
-            フォロー: #{user.followings.count}
-        .profilePage_user_follower
-          = link_to user_follower_path(user) do
-            フォロワー: #{user.followers.count}
-      .profilePage_user_introduction
-        = user.profile&.introduction || '未入力'
-    - user.articles.each do |article|
-      = render 'commons/article', article: article
+          - if current_user&.has_followed?(user)
+            %p.profilePage_user_actionButton_unfollow= link_to 'フォロー中', account_unfollows_path(user), data: {method: 'post'}
+          - else
+            %p.profilePage_user_actionButton_follow= link_to 'フォローする', account_follows_path(user), data: {method: 'post'}
+        - if current_user.has_followed?(user) && user.has_followed?(current_user)
+          - if @InRoom == true
+            %p.profilePage_user_actionButton_chat= link_to 'チャットへ', room_path(@roomId)
+          - else
+            %p.profilePage_user_actionButton_form
+              = form_with model: @room, url: rooms_path, local: true do |f|
+                = fields_for @entry do |entry|
+                  = entry.hidden_field :user_id, value: @user.id
+                = f.submit 'チャットを始める', class: 'profilePage_user_actionButton_form_chat'
+      .profilePage_user_image
+        = image_tag user.avatar_image
+      .profilePage_user_basicInfo
+        .profilePage_user_name
+          .profilePage_user_displayName
+            = user.display_name
+            \/#{user.age || '？歳'}/#{I18n.t("enum.genders.#{user.gender || 'unknown'}")}
+          .profilePage_user_birthday
+            = user.birthday || '未入力'
+          .profilePage_user_location
+            = user.location || '未入力'
+          .profilePage_user_musical-instrument
+            = user.musical_instrument || '未入力'
+          .profilePage_user_follow
+            = link_to user_following_path(user) do
+              フォロー: #{user.followings.count}
+          .profilePage_user_follower
+            = link_to user_follower_path(user) do
+              フォロワー: #{user.followers.count}
+        .profilePage_user_introduction
+          = user.profile&.introduction || '未入力'
+      - user.articles.each do |article|
+        = render 'commons/article', article: article
