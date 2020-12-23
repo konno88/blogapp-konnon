@@ -1,30 +1,31 @@
-.container
-  .home
-    .home_title1
-      %h1 あなたの演奏を
-    .home_title2
-      %h1 みんなとの演奏に
-    .home_chat
-      .home_chat_new
-        = link_to '仲間を集める', new_group_path
-      .home_chat_index
-        = link_to '募集一覧', groups_path
-    - if user_signed_in?
-      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn_logout'
-    - else
-      %button.btn.btn_login ログイン
-    .modal_wrap
-      .modal_content
-        .modal_login 今すぐログイン!
-        .btn_close
-          %i.far.fa-times-circle
-        .modal_login_item
-          %button.modal_login_item_google
-            =link_to user_google_oauth2_omniauth_authorize_path do
-              %span.fa.fa-google
-                Googleでログイン
-          .modal_login_item_signin
-            既にアカウントをお持ちの方は#{link_to 'こちら', new_user_session_path}←
-          .modal_login_item_signup
-            新しくアカウントを作成する方は#{link_to 'こちら', new_user_registration_path}←
+%body#home
+  .container
+    .home
+      .home_title1
+        %h1 あなたの楽器で
+      .home_title2
+        %h1 人を繋ぐ
+      .home_chat
+        .home_chat_new
+          = link_to '仲間を集める', new_group_path
+        .home_chat_index
+          = link_to '募集一覧', groups_path
+      - if user_signed_in?
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn_logout'
+      - else
+        %button.btn.btn_login ログイン
+      .modal_wrap
+        .modal_content
+          .modal_login 今すぐログイン!
+          .btn_close
+            %i.far.fa-times-circle
+          .modal_login_item
+            %button.modal_login_item_google
+              =link_to user_google_oauth2_omniauth_authorize_path do
+                %span.fa.fa-google
+                  Googleでログイン
+            .modal_login_item_signin
+              既にアカウントをお持ちの方は#{link_to 'こちら', new_user_session_path}←
+            .modal_login_item_signup
+              新しくアカウントを作成する方は#{link_to 'こちら', new_user_registration_path}←
 = javascript_pack_tag 'modal'
